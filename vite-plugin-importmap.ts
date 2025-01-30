@@ -10,16 +10,14 @@ export default function vitePluginImportMap({ mapping = {}, extraExclude = [] }:
     name: 'vite-plugin-importmap',
     enforce: 'pre',
     // @ts-ignore
-    config(config, { command }) {
+    config(config) {
       const externalDeps = [...Object.keys(mapping), ...extraExclude];
 
-      if (command === 'build') {
-        config.build = config.build || {};
-        config.build.rollupOptions = config.build.rollupOptions || {};
-        config.build.rollupOptions.external = (id: string) => {
-          return externalDeps.includes(id);
-        };
-      }
+      config.build = config.build || {};
+      config.build.rollupOptions = config.build.rollupOptions || {};
+      config.build.rollupOptions.external = (id: string) => {
+        return externalDeps.includes(id);
+      };
 
       return { exclude: externalDeps };
     },
