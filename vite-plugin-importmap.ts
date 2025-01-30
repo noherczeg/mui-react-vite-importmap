@@ -1,16 +1,17 @@
 import { type Plugin } from 'vite';
 
 interface ImportMapConfig {
-  mapping: Record<string, string>;
+  mapping?: Record<string, string>;
+  extraExclude?: string[];
 }
 
-export default function vitePluginImportMap({ mapping }: ImportMapConfig = { mapping: {} }): Plugin {
+export default function vitePluginImportMap({ mapping = {}, extraExclude = [] }: ImportMapConfig): Plugin {
   return {
     name: 'vite-plugin-importmap',
     enforce: 'pre',
     // @ts-ignore
     config(config, { command }) {
-      const externalDeps = Object.keys(mapping);
+      const externalDeps = [...Object.keys(mapping), ...extraExclude];
 
       if (command === 'build') {
         config.build = config.build || {};

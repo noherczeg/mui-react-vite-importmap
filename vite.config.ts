@@ -6,7 +6,9 @@ import vitePluginImportMap from './vite-plugin-importmap';
 export default defineConfig({
   plugins: [
     vitePluginImportMap({
+      extraExclude: [],
       mapping: {
+        "scheduler": "https://esm.sh/scheduler@0.25.0",
         "react": "https://esm.sh/react@19.0.0",
         "react-is": "https://esm.sh/react-is@19.0.0",
         "react-transition-group": "https://esm.sh/react-transition-group@4.4.5?deps=react-dom@19.0.0,react@19.0.0,dom-helpers@5.2.1",
@@ -14,6 +16,7 @@ export default defineConfig({
         "prop-types": "https://esm.sh/prop-types@15.8.1",
         "clsx": "https://esm.sh/clsx@2.1.1",
         "react-dom": "https://esm.sh/react-dom@19.0.0",
+        "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
         "dom-helpers/addClass": "https://esm.sh/dom-helpers@5.2.1/addClass",
         "dom-helpers/removeClass": "https://esm.sh/dom-helpers@5.2.1/removeClass",
         "hoist-non-react-statics": "https://esm.sh/hoist-non-react-statics@3.3.2?deps=react-is@19.0.0",
