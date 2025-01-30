@@ -6,7 +6,6 @@ import vitePluginImportMap from './vite-plugin-importmap';
 export default defineConfig({
   plugins: [
     vitePluginImportMap({
-      extraExclude: [],
       mapping: {
         "scheduler": "https://esm.sh/scheduler@0.25.0",
         "react": "https://esm.sh/react@19.0.0",
@@ -22,4 +21,4 @@ export default defineConfig({
     }),
     react(),
   ],
-})
+});
