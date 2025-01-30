@@ -1,8 +1,5 @@
 import { useState } from 'react';
 import { Button, Box, Typography } from '@mui/material';
-// import Button from '@mui/material/Button';
-// import Box from '@mui/material/Box';
-// import Typography from '@mui/material/Typography';
 
 function App() {
   const [count, setCount] = useState(0);
