@@ -1,4 +1,4 @@
-# mui-react-importmap
+# mui-react-vite-importmap
 
 The goal of this project is to showcase how we can externalize dependencies while:
 - keeping type checking
